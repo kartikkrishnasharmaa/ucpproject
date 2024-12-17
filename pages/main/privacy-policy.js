@@ -54,7 +54,7 @@ const privacypolicy = () => {
 
 
                 We may update this privacy policy from time to time to reflect any changes in our practices or legal obligations. We will notify you of any changes by posting the new privacy policy on this page. You are advised to review this privacy policy periodically for any changes.
-                <p className='mt-2 font-bold'> This privacy policy was last updated on May 24th, 2023.</p>
+                <p className='mt-2 font-bold'> This privacy policy was last updated on Nov 24th, 2024.</p>
             </div>
         </div>
     );
