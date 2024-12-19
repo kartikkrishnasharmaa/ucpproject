@@ -1,6 +1,5 @@
 module.exports = {
-    generateRobotsTxt: true, // (optional)
-    sitemapSize: 10000, // (optional)
-    // Add any additional configuration here
+    generateRobotsTxt: true,
+    sitemapSize: 10000,
   }
   
