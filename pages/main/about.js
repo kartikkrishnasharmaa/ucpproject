@@ -80,7 +80,7 @@ const about = () => {
 
                                 <p className="leading-relaxed">If you are looking for a reliable and affordable way to learn coding, look no further than Unstop Computer.in website. The website has a huge collection of courses on various coding topics and languages, suitable for all skill levels. The courses are taught by experienced and friendly instructors, who guide you through the concepts and techniques with ease. The website also has a lot of resources and tips to help you improve your coding skills. Unstop Computer.in website is the ultimate online learning destination for coders.</p>
                                 <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Rohan Sharma</h2>
+                                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Priyanka Kanwar</h2>
                                 <p className="text-gray-500">Student</p>
                             </div>
                         </div>
