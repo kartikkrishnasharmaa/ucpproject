@@ -24,7 +24,7 @@ const about = () => {
         <link rel="icon" href="/Images/favicon.ico" type="image/x-icon"></link>
             </Head>
             <section className="box-border h-full w-auto p-10 m-6 border-4 shadow-xl shadow-cyan-600 hover:shadow-indigo-700">
-                <h1 className='title-font sm:text-4xl text-center text-2xl mb-10 font-medium text-blue-700'>About us | Unstop Computer.in</h1>
+                <h1 className='title-font sm:text-4xl text-center text-2xl mb-10 font-medium text-blue-700'>About us | Unstop Computer.tech </h1>
                 <div className="container px-5 py-10 mx-auto flex flex-wrap">
                     <Image src="/Images/about.png" alt="about" width={ 300 } height={ 50 } />
                     <div className="md:w-3/5 md:pl-6">
@@ -80,7 +80,7 @@ const about = () => {
 
                                 <p className="leading-relaxed">If you are looking for a reliable and affordable way to learn coding, look no further than Unstop Computer.in website. The website has a huge collection of courses on various coding topics and languages, suitable for all skill levels. The courses are taught by experienced and friendly instructors, who guide you through the concepts and techniques with ease. The website also has a lot of resources and tips to help you improve your coding skills. Unstop Computer.in website is the ultimate online learning destination for coders.</p>
                                 <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Rohan Sharma</h2>
+                                <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">Priyanka Kanwar</h2>
                                 <p className="text-gray-500">Student</p>
                             </div>
                         </div>

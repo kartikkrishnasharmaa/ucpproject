@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 
-
+// this is 404 not found page
 export default function Custom404() {
     return <div>
      <Head>
