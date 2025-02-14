@@ -87,6 +87,21 @@ const about = () => {
                     </div>
                 </div>
             </section>
+            <section className="bg-gray-100 box-border h-full w-auto p-10 m-6 border-4 shadow-xl shadow-cyan-600 hover:shadow-indigo-700">
+                <div className="container mx-auto flex flex-col items-center text-center">
+                    <h2 className="text-3xl font-semibold text-blue-700 mb-6">Meet the Author</h2>
+                    <Image src="/Images/kartikprofile.jpeg" alt="Author" width={150} height={150} className="rounded-full shadow-md" />
+                    <h3 className="text-xl font-medium text-gray-900 mt-4">Kartik Sharma</h3>
+                    <p className="text-gray-500">Founder & Lead Developer</p>
+                    <p className="mt-2 text-lg text-gray-700">Passionate about coding, technology, and innovation. Dedicated to creating a platform where learning is accessible and enjoyable.</p>
+                    <div className="flex justify-center mt-4 space-x-4">
+                    <a href="https://instagram.com/kartikkrishnasharma" target="_blank" rel="noopener noreferrer" className="text-blue-500">Instagram</a>
+                    <a href="https://www.linkedin.com/in/dev-kartik-sharma/" target="_blank" rel="noopener noreferrer" className="text-blue-700">LinkedIn</a>
+                    <a href="https://github.com/kartikkrishnasharmaa" target="_blank" rel="noopener noreferrer" className="text-gray-900">GitHub</a>
+                    
+                </div>
+                </div>
+            </section>
             {/* <section className="box-border h-full w-auto p-10 m-6 border-4 shadow-xl shadow-cyan-600 hover:shadow-indigo-700">
                 <div className="container mx-auto flex px-5 py-14 items-center justify-center flex-col">
                     <div className="text-center lg:w-3/3 w-full">
