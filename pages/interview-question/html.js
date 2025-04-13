@@ -5,7 +5,7 @@ import QueLayout from "../../components/QueLayout";
 const GlossaryTable = () => {
   const termsData = [
     {
-        "que": "What is the purpose of the `<!DOCTYPE html>` declaration?",
+        "que": "What is the purposee of the `<!DOCTYPE html>` declaration?",
         "ans": "The `<!DOCTYPE html>` declaration defines the document type and version of HTML. It helps the browser to render the web page correctly according to HTML5 standards."
       },
       {
