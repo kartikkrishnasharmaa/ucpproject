@@ -19,6 +19,7 @@ const Header = () => {
     { name: "Interview Prep", path: "/interview-question" },
   ];
 
+  // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
@@ -59,11 +60,16 @@ const Header = () => {
     },
   };
 
+  const hoverEffect = {
+    rest: { width: "0%", transition: { duration: 0.3 } },
+    hover: { width: "100%", transition: { duration: 0.3 } },
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo with animation */}
           <motion.div
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
@@ -99,28 +105,26 @@ const Header = () => {
                 >
                   <Link
                     href={navItem.path}
-                    className={`relative px-2 py-1.5 font-medium ${
-                      isActive ? "text-blue-600 font-semibold" : "text-gray-700 hover:text-blue-600"
+                    className={`relative px-2 py-1.5 font-medium transition-colors ${
+                      isActive
+                        ? "text-blue-900 font-bold "
+                        : "text-gray-700 hover:text-blue-600"
                     }`}
                   >
                     {navItem.name}
-                    
-                    {/* Double underline effect for active item */}
-                    {isActive && (
-                      <div className="absolute bottom-0 left-0 w-full">
-                        <div className="h-[2px] bg-blue-600 mb-[2px]"></div>
-                        <div className="h-[1px] bg-blue-400"></div>
-                      </div>
-                    )}
-                    
-                    {/* Hover underline effect */}
-                    {!isActive && hoveredItem === index && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-[2px] bg-blue-400"
-                        initial={{ width: 0 }}
+                    {(hoveredItem === index || isActive) && (
+                      <motion.span
+                        layoutId="navHover"
+                        className={`absolute left-0 bottom-0 h-0.5 ${
+                          isActive ? "bg-blue-600" : "bg-blue-400"
+                        }`}
+                        initial={{ width: isActive ? "100%" : 0 }}
                         animate={{ width: "100%" }}
-                        exit={{ width: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 20,
+                        }}
                       />
                     )}
                   </Link>
@@ -211,10 +215,7 @@ const Header = () => {
                           </span>
                           {navItem.name}
                           {isActive && (
-                            <div className="ml-2 flex flex-col space-y-[2px]">
-                              <div className="h-[1px] w-3 bg-blue-400"></div>
-                              <div className="h-[1px] w-3 bg-blue-400"></div>
-                            </div>
+                            <span className="ml-2 text-blue-400">●</span>
                           )}
                         </motion.div>
                       </Link>
