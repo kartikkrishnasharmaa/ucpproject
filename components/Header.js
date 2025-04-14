@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +9,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const pathname = usePathname();
+  const scrollableRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const [items, setItems] = useState([]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -19,12 +22,107 @@ const Header = () => {
     { name: "Interview Prep", path: "/interview-question" },
   ];
 
+  const scrollItemsData = [
+    {
+      text: "Android Developer",
+      path: "/interview-question/android-developer",
+    },
+    {
+      text: "Data Structure",
+      path: "/interview-question/data-structure",
+    },
+    {
+      text: "CSS",
+      path: "/interview-question/css",
+    },
+    {
+      text: "Flutter",
+      path: "/interview-question/flutter",
+    },
+    {
+      text: "HTML",
+      path: "/interview-question/html",
+    },
+    {
+      text: "MERN Stack",
+      path: "/interview-question/mern-stack",
+    },
+    {
+      text: "Next Js",
+      path: "/interview-question/nextjs",
+    },
+    {
+      text: "Node Js",
+      path: "/interview-question/nodejs",
+    },
+    {
+      text: "React Js",
+      path: "/interview-question/reactjs",
+    },
+    {
+      text: "React Native",
+      path: "/interview-question/react-native",
+    },
+    {
+      text: "Python",
+      path: "/interview-question/python",
+    },
+    {
+      text: "MS Excel",
+      path: "/interview-question/excel",
+    },
+    {
+      text: "Microsoft Power BI",
+      path: "/interview-question/powerbi",
+    },
+    {
+      text: "PHP",
+      path: "/interview-question/php",
+    },
+    {
+      text: "Django",
+      path: "/interview-question/django",
+    },
+  ];
+  // Initialize items with duplicates for seamless looping
+  useEffect(() => {
+    setItems([...scrollItemsData, ...scrollItemsData]);
+  }, []);
+
+  // Auto-scroll effect with infinite loop
+  useEffect(() => {
+    const scrollContainer = scrollableRef.current;
+    if (!scrollContainer || isPaused || items.length === 0) return;
+
+    const scrollSpeed = 1;
+    let animationFrame;
+    let scrollAmount = 0;
+    const itemWidth = scrollContainer.children[0]?.offsetWidth + 16; // 16px for margin
+
+    const scroll = () => {
+      scrollAmount += scrollSpeed;
+      scrollContainer.scrollLeft = scrollAmount;
+
+      // When we've scrolled past the first set of items, reset scroll position seamlessly
+      if (scrollAmount >= scrollItemsData.length * itemWidth) {
+        scrollAmount = 0;
+        scrollContainer.scrollLeft = 0;
+      }
+
+      animationFrame = requestAnimationFrame(scroll);
+    };
+
+    animationFrame = requestAnimationFrame(scroll);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isPaused, items]);
+
   // Close mobile menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Animation variants
+  // Animation variants (same as before)
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -58,11 +156,6 @@ const Header = () => {
         ease: "easeInOut",
       },
     },
-  };
-
-  const hoverEffect = {
-    rest: { width: "0%", transition: { duration: 0.3 } },
-    hover: { width: "100%", transition: { duration: 0.3 } },
   };
 
   return (
@@ -226,6 +319,38 @@ const Header = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Horizontal Scrollable Section - No Scrollbar */}
+        <div
+          className="mt-2 relative overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div
+            ref={scrollableRef}
+            className="flex overflow-x-auto whitespace-nowrap py-2 scrollbar-none"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            <style jsx>{`
+              .scrollbar-none::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+
+            {items.map((item, index) => (
+              <Link
+                key={`${item.text}-${index}`} // Unique key for duplicated items
+                href={item.path}
+                className="inline-block px-4 py-1 mx-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium text-gray-700 transition-colors duration-200 flex-shrink-0"
+              >
+                {item.text}
+              </Link>
+            ))}
+          </div>
+        </div>
       </nav>
     </header>
   );
