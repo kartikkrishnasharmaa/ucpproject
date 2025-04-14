@@ -256,7 +256,7 @@ const GlossaryTable = () => {
           property="og:title"
           content="Android Developer Interview Question | Unstop Computer"
         />
-       <meta property="og:description" content="Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms." />
+       <meta property="og:description" content="Here, you'll find a treasure trove of questions covering everything related to android developer" />
       </Head>
       <QueLayout>
         <section id="content-wrapper">
@@ -266,12 +266,12 @@ const GlossaryTable = () => {
                 <div className="lg:flex-grow lg:pr-24 md:pr-14 flex flex-col md:items-start md:text-left md:mb-0">
                   <div className="relative xl:container">
                     <h2 className=" text-blue-700 text-2xl sm:text-xl md:text-5xl lg:text-center xl:text-4l dark:text-blue">
-                      Microsoft Excel Interview Questions and Answer{" "}
+                      Android Developer Interview Questions and Answer{" "}
                     </h2>{" "}
                     <br className="lg:block hidden" />
                   </div>
                   <p className="mt-2">
-                    Here are Microsoft Excel Top interview questions along with
+                    Here are Android Developer Top interview questions along with
                     their correct answers..{" "}
                   </p>
                 </div>
