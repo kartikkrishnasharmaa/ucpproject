@@ -3,6 +3,8 @@ import Hero from '../components/Hero';
 import Feature from '../components/Feature';
 import Compiler from '../components/compiler';
 import Mcq from '../components/Mcq';
+import TiltCard from './TiltCard'; 
+import styles from './Home.module.css'; // ✅ Add this line
 
 export default function Home() {
   return (
@@ -26,8 +28,11 @@ export default function Home() {
       </Head>
       <Hero />
       <Feature />
-      <Mcq />
-      <Compiler />
+
+      <main className={styles.mainContainer}>
+      <TiltCard><Mcq /></TiltCard>
+      <TiltCard><Compiler /></TiltCard>
+      </main>
     </>
   );
 }
