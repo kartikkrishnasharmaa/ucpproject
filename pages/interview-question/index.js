@@ -2,6 +2,8 @@ import { useState } from "react";
 import QueLayout from "../../components/QueLayout";
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -92,129 +94,121 @@ export default function Home() {
     },
   ];
 
-  // Get unique categories
   const categories = [
     ...new Set(mcqsubjects.map((subject) => subject.category)),
   ];
-
-  // Filtered subjects based on selectedCategory
   const filteredSubjects = selectedCategory
-    ? mcqsubjects.filter((subject) => subject.category === selectedCategory)
+    ? mcqsubjects.filter((s) => s.category === selectedCategory)
     : mcqsubjects;
 
   return (
     <QueLayout>
       <Head>
-        <title>
-          Interview Question- All Computer related terms| Unstop Computer
-        </title>
+        <title>Interview Questions | Learn with Unstop Computer</title>
         <meta
           name="description"
-          content=" Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms."
+          content="Ace your technical interviews with top MCQs and coding interview questions. Learn Data Structures, Web Dev, Python, Power BI and more."
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta charSet="UTF-8" />
-        <meta name="robots" content="index, follow" />
         <meta
-          name="Keywords"
-          content="HTML,Unstop Computer.in,UnstopComputers, Unstop Computer, UnstopComputers.in Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, XML, MySQL, Icons, Node.js, React, Vue, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website"
+          name="keywords"
+          content="Interview Questions, MCQ, Data Structures, Python, React, MERN, HTML, CSS, Power BI, Unstop Computer"
         />
+        <meta name="robots" content="index, follow" />
         <link
           rel="canonical"
           href="https://unstopcomputer.vercel.app/interview-question"
         />
         <meta
+          property="og:title"
+          content="Top Interview Questions - Unstop Computer"
+        />
+        <meta
+          property="og:description"
+          content="Interview questions and answers hub for Data Science, Web Development, Software Development, and more."
+        />
+        <meta
           property="og:image"
           content="https://unstopcomputer.vercel.app/Images/logo.png"
         />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="150" />
-        <meta property="og:image:height" content="150" />
-        <meta
-          property="og:title"
-          content="Interview Question- All Computer related terms | Unstop Computer"
-        />
-        <meta
-          name="description"
-          content=" Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms."
-        />
       </Head>
       <section id="content-wrapper">
-        <div className="row">
+        <div>
           {/* Your existing code */}
-          <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-            {/* Add a section for category filter */}
-            <div className="container text-center mx-auto flex px-5 py-6 md:flex-row flex-col items-center">
-              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left md:mb-0 items-center text-center">
-                <div className="relative xl:container">
-                  <h2 className=" text-blue-700 text-4xl text-center sm:text-xl md:text-4xl lg:w-auto lg:text-left xl:text-4xl dark:text-blue">
-                    Top Interview Question with Answer
-                  </h2>{" "}
-                  <br className="lg:block hidden" />
-                </div>
-                <p>
-                  Welcome to our Interview Questions and Answers hub for
-                  Computer Science enthusiasts! Here, you'll find a treasure
-                  trove of questions covering everything from programming
-                  languages to data structures and algorithms. Whether you're
-                  gearing up for a job interview or simply exploring new
-                  concepts, we've got you covered. Dive in, test your knowledge,
-                  and embark on a journey through the exciting world of Computer
-                  Science. Happy learning!
+          <div className="lg:w-4/5 sm:mx-auto sm:mb-2">
+            <section className="mt-4">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-center max-w-4xl mx-auto"
+              >
+                <h1 className="text-4xl md:text-5xl font-bold text-blue-700">
+                  Top Interview Questions with Answers
+                </h1>
+                <p className="mt-4 text-gray-700 text-lg">
+                  Explore industry-relevant questions on Data Structures, Web
+                  Development, Python, and more. Prepare smart and succeed!
                 </p>
-                <p className="items-center mt-7 text-center">
-                  Select your course and start learning now
-                </p>
-              </div>
-            </div>
+              </motion.div>
 
-            <div className="flex items-center mx-auto m-2">
-
-              <div className="flex flex-col items-center md:flex-row mb-6">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="flex flex-wrap justify-center gap-3 mt-10"
+              >
                 {categories.map((category) => (
                   <button
                     key={category}
-                    className={`bg-white mt-1 md:mt-0 md:ml-1 hover:bg-blue-700 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-white rounded-2xl`}
                     onClick={() => setSelectedCategory(category)}
+                    className="bg-white border border-blue-600 text-blue-700 hover:bg-blue-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
                   >
                     {category}
                   </button>
                 ))}
-                {/* Add a button to clear the filter */}
                 <button
-                  className={`bg-white mt-1 md:mt-0 md:ml-1 hover:bg-blue-700 text-blue-700 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-white rounded-2xl`}
                   onClick={() => setSelectedCategory(null)}
+                  className="bg-white border border-gray-500 text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
                 >
                   Clear Filter
                 </button>
-              </div>
-            </div>
+              </motion.div>
 
-            {/* Display filtered subjects */}
-            {filteredSubjects.map((subject) => (
-              <div key={subject.id} className="p-2 sm:w-1/2 w-full">
-                <Link href={subject.link}>
-                  <div className="bg-gray-100 rounded flex p-4 h-full items-center cursor-pointer">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="3"
-                      className="text-blue-700 w-6 h-6 flex-shrink-0 mr-4"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                      <path d="M22 4L12 14.01l-3-3"></path>
-                    </svg>
-                    <span className="title-font font-medium">
-                      {subject.name}
-                    </span>
-                  </div>
-                </Link>
-              </div>
-            ))}
+              <motion.div
+                layout
+                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 max-w-6xl mx-auto"
+              >
+                {filteredSubjects.map((subject) => (
+                  <motion.div
+                    key={subject.id}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 cursor-pointer"
+                  >
+                    <Link href={subject.link}>
+                      <div className="flex items-center space-x-4">
+                        <div className="bg-blue-100 p-3 rounded-full">
+                          <svg
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="3"
+                            className="text-blue-700 w-6 h-6"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <path d="M22 4L12 14.01l-3-3" />
+                          </svg>
+                        </div>
+                        <span className="font-semibold text-lg text-blue-900">
+                          {subject.name}
+                        </span>
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </section>
           </div>
         </div>
       </section>

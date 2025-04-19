@@ -252,78 +252,178 @@ const GlossaryTable = () => {
 
     // Add more terms as needed
   ];
-
   return (
     <>
       <Head>
-      <title>CSS Interview Question | Unstop Computer</title>
-        <meta name="description" content="Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms." />
-
+        <title>
+          Top CSS Interview Questions with Answers | Unstop Computer
+        </title>
+        <meta
+          name="description"
+          content="Explore the most asked CSS interview questions with detailed answers. Perfect for beginners and experienced developers."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta
-          name="Keywords"
-          content="HTML,Unstop Computer.in,UnstopComputers, Unstop Computer, UnstopComputers.in Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, XML, MySQL, Icons, Node.js, React, Vue, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website"
+          name="keywords"
+          content="CSS interview questions, CSS answers, frontend interview, web development, Unstop Computer"
         />
         <link
           rel="canonical"
-          href="https://unstopcomputer.vercel.app/interview-question/css"
+          href="https://unstopcomputer.tech/interview-question/css"
+        />
+
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="CSS Interview Questions and Answers | Unstop Computer"
+        />
+        <meta
+          property="og:description"
+          content="Crack your next frontend interview with these essential CSS questions and detailed answers. Curated by Unstop Computer."
         />
         <meta
           property="og:image"
-          content="https://unstopcomputer.vercel.app/Images/logo.png"
+          content="https://unstopcomputer.tech/Images/logo.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />
         <meta property="og:image:height" content="150" />
         <meta
-          property="og:title"
-          content="CSS Interview Question | Unstop Computer"
+          property="og:url"
+          content="https://unstopcomputer.tech/interview-question/css"
         />
-       <meta property="og:description" content="Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms." />
+        <meta property="og:type" content="website" />
       </Head>
+
       <QueLayout>
-        <section id="content-wrapper">
-          <div className="row">
-            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-              <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col">
-                <div className="lg:flex-grow lg:pr-24 md:pr-14 flex flex-col md:items-start md:text-left md:mb-0">
-                  <div className="relative xl:container">
-                    <h2 className=" text-blue-700 text-2xl sm:text-xl md:text-5xl lg:text-center xl:text-4l dark:text-blue">
-                      CSS Interview Questions and Answer{" "}
-                    </h2>{" "}
-                    <br className="lg:block hidden" />
+        <section
+          id="content-wrapper"
+          className="py-12 bg-white"
+        >
+           <nav className="flex mb-6 mt-7" aria-label="Breadcrumb">
+              <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                <li className="inline-flex items-center">
+                  <a href="/" className="text-blue-900 hover:text-blue-800">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <div className="flex items-center">
+                    <span className="mx-2 text-gray-400">/</span>
+                    <a href="/interview-question" className="text-blue-900 hover:text-blue-800">
+                      Interview Questions
+                    </a>
                   </div>
-                  <p className="mt-2">
-                    Here are CSS Top interview questions along with their
-                    correct answers..{" "}
-                  </p>
+                </li>
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <span className="mx-2 text-gray-400">/</span>
+                    <span className="text-blue-900">CSS </span>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl font-extrabold text-center text-blue-700 mb-4">
+              CSS Interview Questions and Answers
+            </h1>
+            <p className="text-center text-blue-700  max-w-2xl mx-auto mb-12">
+              These are commonly asked CSS interview questions you should know.
+              Master them and get confident for your frontend interviews!
+            </p>
+            
+            {/* Content Stats */}
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{termsData.length}+</div>
+                  <div className="text-gray-600 dark:text-gray-300">Questions</div>
+                </div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2025</div>
+                  <div className="text-gray-600 dark:text-gray-300">Updated</div>
+                </div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Beginner to Advanced</div>
+                  <div className="text-gray-600 dark:text-gray-300">Levels</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                  <div className="text-gray-600 dark:text-gray-300">Practical Answers</div>
                 </div>
               </div>
-              <div className="max-w-screen-lg mx-auto p-4">
-                <div className="w-full table-auto">
-                  {termsData.map((term, index) => (
-                    <div
-                      key={index + 1}
-                      class="flex flex-col gap-4 p-3 mt-7 shadow-xl"
-                    >
-                      <div class="flex justify justify-between">
-                        <div class="flex gap-auto">
-                          <div class="w-7 h-7 text-center rounded-full bg-blue-700 mr-6 text-white">
-                            {index + 1}
-                          </div>
-                          <span className="font-bold">{term.que}</span>
+            </div>
+
+            {/* Table of Contents */}
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                Table of Contents
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                {termsData.map((term, index) => (
+                  <a
+                    key={index}
+                    href={`#q${index + 1}`}
+                    className="text-blue-600 hover:text-white dark:text-blue-400 hover:underline"
+                  >
+                    {index + 1}. {term.que}
+                  </a>
+                ))}
+              </div>
+            </div>
+            {/* Questions Section */}
+            <div className="space-y-6">
+              {termsData.map((term, index) => (
+                <div
+                  key={index}
+                  id={`q${index + 1}`}
+                  className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                >
+                  <div className="p-6">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                          {term.que}
+                        </h3>
+                        <div className="prose dark:prose-dark max-w-none">
+                          <p className="text-gray-600 dark:text-gray-300">
+                            <span className="font-medium text-gray-800 dark:text-gray-200">
+                              Answer:
+                            </span>{" "}
+                            {term.ans}
+                          </p>
                         </div>
                       </div>
-                      <div className="m-3">
-                        Ans.
-                        <span className="ml-2">{term.ans}</span>
-                      </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <div className="bg-blue-50 dark:bg-blue-900 rounded-lg shadow-md p-8 mt-12 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                Ready for Your Technical Interview ?
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                Practice these questions thoroughly and boost your confidence
+                for the interview. Bookmark this page for future reference and
+                share with fellow developers.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="/interview-question"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+                >
+                  More Interview Questions
+                </a>
               </div>
             </div>
           </div>

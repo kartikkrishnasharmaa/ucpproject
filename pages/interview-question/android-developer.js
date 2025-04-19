@@ -226,78 +226,188 @@ const GlossaryTable = () => {
     },
     // Add more terms as needed
   ];
+  const pageTitle = "Top 50 Android Developer Interview Questions & Answers (2024) | Unstop Computer";
+  const pageDescription = "Comprehensive collection of Android interview questions with detailed answers. Prepare for your Android developer job interview with these essential questions on Activities, Fragments, Services, and more.";
+  const canonicalUrl = "https://unstopcomputer.tech/interview-question/android-developer";
+  const pageImage = "https://unstopcomputer.tech/Images/logo.png";
 
   return (
     <>
       <Head>
-      <title>Android Developer Interview Question | Unstop Computer</title>
-        <meta name="description" content="Here, you'll find a treasure trove of questions covering everything from programming languages to data structures and algorithms." />
-
+        {/* Primary Meta Tags */}
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#317EFB" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
-        <meta
-          name="Keywords"
-          content="HTML,Unstop Computer.in,UnstopComputers, Unstop Computer, UnstopComputers.in Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, XML, MySQL, Icons, Node.js, React, Vue, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website"
-        />
-        <link
-          rel="canonical"
-          href="https://unstopcomputer.vercel.app/interview-question/android-developer"
-        />
-        <meta
-          property="og:image"
-          content="https://unstopcomputer.vercel.app/Images/logo.png"
-        />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="150" />
-        <meta property="og:image:height" content="150" />
-        <meta
-          property="og:title"
-          content="Android Developer Interview Question | Unstop Computer"
-        />
-       <meta property="og:description" content="Here, you'll find a treasure trove of questions covering everything related to android developer" />
+        <meta name="googlebot" content="index, follow" />
+        
+        {/* Keywords - Improved and more focused */}
+        <meta name="keywords" content="Android interview questions, Android developer interview, Android programming questions, Android job interview, Android technical interview, Android coding interview, Android developer FAQ, Android interview preparation, Android development questions, Mobile development interview" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={pageImage} />
+        <meta property="og:image:alt" content="Unstop Computer Logo" />
+        <meta property="og:site_name" content="Unstop Computer" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={pageImage} />
+        <meta name="twitter:image:alt" content="Unstop Computer Logo" />
+        
+        {/* Favicons */}
+        <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/Images/apple-touch-icon.png" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": termsData.map((term, index) => ({
+              "@type": "Question",
+              "name": term.que,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": term.ans
+              }
+            }))
+          })}
+        </script>
       </Head>
+      
       <QueLayout>
-        <section id="content-wrapper">
-          <div className="row">
-            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
-              <div className="container mx-auto flex px-5 py-16 md:flex-row flex-col">
-                <div className="lg:flex-grow lg:pr-24 md:pr-14 flex flex-col md:items-start md:text-left md:mb-0">
-                  <div className="relative xl:container">
-                    <h2 className=" text-blue-700 text-2xl sm:text-xl md:text-5xl lg:text-center xl:text-4l dark:text-blue">
-                      Android Developer Interview Questions and Answer{" "}
-                    </h2>{" "}
-                    <br className="lg:block hidden" />
+        <section id="content-wrapper" className="">
+          <div className="container mx-auto px-4 py-8">
+            {/* Breadcrumb Navigation */}
+            <nav className="flex mb-6" aria-label="Breadcrumb">
+              <ol className="inline-flex items-center space-x-1 md:space-x-3">
+                <li className="inline-flex items-center">
+                  <a href="/" className="text-blue-900 hover:text-blue-800">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <div className="flex items-center">
+                    <span className="mx-2 text-gray-400">/</span>
+                    <a href="/interview-question" className="text-blue-900 hover:text-blue-800">
+                      Interview Questions
+                    </a>
                   </div>
-                  <p className="mt-2">
-                    Here are Android Developer Top interview questions along with
-                    their correct answers..{" "}
-                  </p>
+                </li>
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <span className="mx-2 text-gray-400">/</span>
+                    <span className="text-blue-900">Android Developer</span>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+
+            {/* Page Header */}
+            <div className="text-center mb-12">
+              <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
+                Android Developer Interview Questions and Answers
+              </h1>
+              <p className="text-lg text-blue-700 max-w-3xl mx-auto">
+                Comprehensive collection of frequently asked Android interview questions with detailed answers. 
+                Prepare for your technical interview with these essential questions on Activities, Fragments, Services, and more.
+              </p>
+            </div>
+
+            {/* Content Stats */}
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{termsData.length}+</div>
+                  <div className="text-gray-600 dark:text-gray-300">Questions</div>
+                </div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2025</div>
+                  <div className="text-gray-600 dark:text-gray-300">Updated</div>
+                </div>
+                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Beginner to Advanced</div>
+                  <div className="text-gray-600 dark:text-gray-300">Levels</div>
+                </div>
+                <div className="p-4">
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                  <div className="text-gray-600 dark:text-gray-300">Practical Answers</div>
                 </div>
               </div>
-              <div className="max-w-screen-lg mx-auto p-4">
-                <div className="w-full table-auto">
-                  {termsData.map((term, index) => (
-                    <div
-                      key={index + 1}
-                      class="flex flex-col gap-4 p-3 mt-7 shadow-xl"
-                    >
-                      <div class="flex justify justify-between">
-                        <div class="flex gap-auto">
-                          <div class="w-7 h-7 text-center rounded-full bg-blue-700 mr-6 text-white">
-                            {index + 1}
-                          </div>
-                          <span className="font-bold">{term.que}</span>
+            </div>
+
+            {/* Table of Contents */}
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
+              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Table of Contents</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                {termsData.map((term, index) => (
+                  <a 
+                    key={index} 
+                    href={`#q${index+1}`} 
+                    className="text-blue-600 hover:text-white dark:text-blue-400 hover:underline"
+                  >
+                    {index + 1}. {term.que}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Questions Section */}
+            <div className="space-y-6">
+              {termsData.map((term, index) => (
+                <div 
+                  key={index} 
+                  id={`q${index+1}`}
+                  className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
+                >
+                  <div className="p-6">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                          {term.que}
+                        </h3>
+                        <div className="prose dark:prose-dark max-w-none">
+                          <p className="text-gray-600 dark:text-gray-300">
+                            <span className="font-medium text-gray-800 dark:text-gray-200">Answer:</span> {term.ans}
+                          </p>
                         </div>
                       </div>
-                      <div className="m-3">
-                        Ans.
-                        <span className="ml-2">{term.ans}</span>
-                      </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Call to Action */}
+            <div className="bg-blue-50 dark:bg-blue-900 rounded-lg shadow-md p-8 mt-12 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                Ready for Your Technical Interview ?
+              </h2>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+                Practice these questions thoroughly and boost your confidence for the interview. 
+                Bookmark this page for future reference and share with fellow developers.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a 
+                  href="/interview-question" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
+                >
+                  More Interview Questions
+                </a>
               </div>
             </div>
           </div>
