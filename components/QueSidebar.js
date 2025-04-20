@@ -95,13 +95,29 @@ const QueSidebar = () => {
       link: "/interview-question/django",
     },
     {
-      id: 14,
+      id: 15,
+      name: "Wordpress",
+      category: "Digital Marketing",
+      link: "/interview-question/wordpress",
+    },
+    {
+      id: 16,
       name: ".",
       category: "",
       link: "",
     },
     {
-      id: 14,
+      id: 16,
+      name: ".",
+      category: "",
+      link: "",
+    },{
+      id: 16,
+      name: ".",
+      category: "",
+      link: "",
+    },{
+      id: 16,
       name: ".",
       category: "",
       link: "",

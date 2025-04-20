@@ -148,6 +148,16 @@ const Home = () => {
       metaDesc:
         "PHP interview questions on OOP, MVC frameworks, security practices, and server-side web development.",
     },
+    {
+      id: 15,
+      name: "Wordpress",
+      category: ["Digital Marketing"],
+      link: "/interview-question/wordpress",
+      image: "/Images/subject/dm.png",
+      gradient: "from-indigo-500 to-indigo-700",
+      metaDesc:
+        "Prepare for wordpress technical interview with these essential questions on themes, plugins, security, performance, and more.",
+    },
   ];
 
   const categories = [
