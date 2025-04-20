@@ -126,7 +126,7 @@ const QueSidebar = () => {
                   }`}
                 >
                   <i className="fa fa-home" />
-                  Interview Question - Home
+                  Interview Question
                 </div>
               </Link>
             </li>

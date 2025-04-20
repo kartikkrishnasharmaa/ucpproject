@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import QueLayout from "../../components/QueLayout";
+import Link from "next/link";
 
 const GlossaryTable = () => {
   const termsData = [
@@ -226,9 +227,12 @@ const GlossaryTable = () => {
     },
     // Add more terms as needed
   ];
-  const pageTitle = "Top 50 Android Developer Interview Questions & Answers (2024) | Unstop Computer";
-  const pageDescription = "Comprehensive collection of Android interview questions with detailed answers. Prepare for your Android developer job interview with these essential questions on Activities, Fragments, Services, and more.";
-  const canonicalUrl = "https://unstopcomputer.tech/interview-question/android-developer";
+  const pageTitle =
+    "Top 50 Android Developer Interview Questions & Answers (2024) | Unstop Computer";
+  const pageDescription =
+    "Comprehensive collection of Android interview questions with detailed answers. Prepare for your Android developer job interview with these essential questions on Activities, Fragments, Services, and more.";
+  const canonicalUrl =
+    "https://unstopcomputer.tech/interview-question/android-developer";
   const pageImage = "https://unstopcomputer.tech/Images/logo.png";
 
   return (
@@ -242,13 +246,16 @@ const GlossaryTable = () => {
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
-        
+
         {/* Keywords - Improved and more focused */}
-        <meta name="keywords" content="Android interview questions, Android developer interview, Android programming questions, Android job interview, Android technical interview, Android coding interview, Android developer FAQ, Android interview preparation, Android development questions, Mobile development interview" />
+        <meta
+          name="keywords"
+          content="Android interview questions, Android developer interview, Android programming questions, Android job interview, Android technical interview, Android coding interview, Android developer FAQ, Android interview preparation, Android development questions, Mobile development interview"
+        />
 
         {/* Canonical URL */}
         <link rel="canonical" href={canonicalUrl} />
-        
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={canonicalUrl} />
@@ -257,61 +264,64 @@ const GlossaryTable = () => {
         <meta property="og:image" content={pageImage} />
         <meta property="og:image:alt" content="Unstop Computer Logo" />
         <meta property="og:site_name" content="Unstop Computer" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDescription} />
         <meta name="twitter:image" content={pageImage} />
         <meta name="twitter:image:alt" content="Unstop Computer Logo" />
-        
+
         {/* Favicons */}
         <link rel="icon" href="/Images/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/Images/apple-touch-icon.png" />
-        
+
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": termsData.map((term, index) => ({
+            mainEntity: termsData.map((term, index) => ({
               "@type": "Question",
-              "name": term.que,
-              "acceptedAnswer": {
+              name: term.que,
+              acceptedAnswer: {
                 "@type": "Answer",
-                "text": term.ans
-              }
-            }))
+                text: term.ans,
+              },
+            })),
           })}
         </script>
       </Head>
-      
+
       <QueLayout>
         <section id="content-wrapper" className="">
           <div className="container mx-auto px-4 py-8">
             {/* Breadcrumb Navigation */}
             <nav className="flex mb-6" aria-label="Breadcrumb">
-              <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                <li className="inline-flex items-center">
-                  <a href="/" className="text-blue-900 hover:text-blue-800">
+              <div className="inline-flex items-center space-x-1 md:space-x-3">
+                <div className="inline-flex items-center">
+                  <Link href="/" className="text-blue-900 hover:text-blue-800">
                     Home
-                  </a>
-                </li>
-                <li>
+                  </Link>
+                </div>
+                <div>
                   <div className="flex items-center">
                     <span className="mx-2 text-gray-400">/</span>
-                    <a href="/interview-question" className="text-blue-900 hover:text-blue-800">
+                    <Link
+                      href="/interview-question"
+                      className="text-blue-900 hover:text-blue-800"
+                    >
                       Interview Questions
-                    </a>
+                    </Link>
                   </div>
-                </li>
-                <li aria-current="page">
+                </div>
+                <div aria-current="page">
                   <div className="flex items-center">
                     <span className="mx-2 text-gray-400">/</span>
                     <span className="text-blue-900">Android Developer</span>
                   </div>
-                </li>
-              </ol>
+                </div>
+              </div>
             </nav>
 
             {/* Page Header */}
@@ -320,8 +330,10 @@ const GlossaryTable = () => {
                 Android Developer Interview Questions and Answers
               </h1>
               <p className="text-lg text-blue-700 max-w-3xl mx-auto">
-                Comprehensive collection of frequently asked Android interview questions with detailed answers. 
-                Prepare for your technical interview with these essential questions on Activities, Fragments, Services, and more.
+                Comprehensive collection of frequently asked Android interview
+                questions with detailed answers. Prepare for your technical
+                interview with these essential questions on Activities,
+                Fragments, Services, and more.
               </p>
             </div>
 
@@ -329,32 +341,48 @@ const GlossaryTable = () => {
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{termsData.length}+</div>
-                  <div className="text-gray-600 dark:text-gray-300">Questions</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    {termsData.length}+
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Questions
+                  </div>
                 </div>
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2025</div>
-                  <div className="text-gray-600 dark:text-gray-300">Updated</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    2025
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Updated
+                  </div>
                 </div>
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Beginner to Advanced</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    Beginner to Advanced
+                  </div>
                   <div className="text-gray-600 dark:text-gray-300">Levels</div>
                 </div>
                 <div className="p-4">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
-                  <div className="text-gray-600 dark:text-gray-300">Practical Answers</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    100%
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Practical Answers
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Table of Contents */}
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
-              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Table of Contents</h2>
+              <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                Table of Contents
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 {termsData.map((term, index) => (
-                  <a 
-                    key={index} 
-                    href={`#q${index+1}`} 
+                  <a
+                    key={index}
+                    href={`#q${index + 1}`}
                     className="text-blue-600 hover:text-white dark:text-blue-400 hover:underline"
                   >
                     {index + 1}. {term.que}
@@ -366,9 +394,9 @@ const GlossaryTable = () => {
             {/* Questions Section */}
             <div className="space-y-6">
               {termsData.map((term, index) => (
-                <div 
-                  key={index} 
-                  id={`q${index+1}`}
+                <div
+                  key={index}
+                  id={`q${index + 1}`}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
                 >
                   <div className="p-6">
@@ -382,7 +410,10 @@ const GlossaryTable = () => {
                         </h3>
                         <div className="prose dark:prose-dark max-w-none">
                           <p className="text-gray-600 dark:text-gray-300">
-                            <span className="font-medium text-gray-800 dark:text-gray-200">Answer:</span> {term.ans}
+                            <span className="font-medium text-gray-800 dark:text-gray-200">
+                              Answer:
+                            </span>{" "}
+                            {term.ans}
                           </p>
                         </div>
                       </div>
@@ -398,12 +429,13 @@ const GlossaryTable = () => {
                 Ready for Your Technical Interview ?
               </h2>
               <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-                Practice these questions thoroughly and boost your confidence for the interview. 
-                Bookmark this page for future reference and share with fellow developers.
+                Practice these questions thoroughly and boost your confidence
+                for the interview. Bookmark this page for future reference and
+                share with fellow developers.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href="/interview-question" 
+                <a
+                  href="/interview-question"
                   className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300"
                 >
                   More Interview Questions

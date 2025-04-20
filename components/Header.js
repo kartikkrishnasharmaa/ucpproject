@@ -18,7 +18,7 @@ const Header = () => {
     { name: "Computer Dictionary", path: "/glossary" },
     { name: "MCQ", path: "/mcq" },
     { name: "Test", path: "/test" },
-    { name: "Interview Prep", path: "/interview-question" },
+    { name: "Interview Preparation", path: "/interview-question" },
   ];
 
   const scrollItemsData = [

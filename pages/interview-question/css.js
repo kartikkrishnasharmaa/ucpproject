@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import QueLayout from "../../components/QueLayout";
+import Link from "next/link";
 
 const GlossaryTable = () => {
   const termsData = [
@@ -299,33 +300,33 @@ const GlossaryTable = () => {
       </Head>
 
       <QueLayout>
-        <section
-          id="content-wrapper"
-          className="py-12 bg-white"
-        >
-           <nav className="flex mb-6 mt-7" aria-label="Breadcrumb">
-              <ol className="inline-flex items-center space-x-1 md:space-x-3">
-                <li className="inline-flex items-center">
-                  <a href="/" className="text-blue-900 hover:text-blue-800">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <div className="flex items-center">
-                    <span className="mx-2 text-gray-400">/</span>
-                    <a href="/interview-question" className="text-blue-900 hover:text-blue-800">
-                      Interview Questions
-                    </a>
-                  </div>
-                </li>
-                <li aria-current="page">
-                  <div className="flex items-center">
-                    <span className="mx-2 text-gray-400">/</span>
-                    <span className="text-blue-900">CSS </span>
-                  </div>
-                </li>
-              </ol>
-            </nav>
+        <section id="content-wrapper" className="py-12 bg-white">
+          <nav className="flex mb-6" aria-label="Breadcrumb">
+            <div className="inline-flex items-center space-x-1 md:space-x-3">
+              <div className="inline-flex items-center">
+                <Link href="/" className="text-blue-900 hover:text-blue-800">
+                  Home
+                </Link>
+              </div>
+              <div>
+                <div className="flex items-center">
+                  <span className="mx-2 text-gray-400">/</span>
+                  <Link
+                    href="/interview-question"
+                    className="text-blue-900 hover:text-blue-800"
+                  >
+                    Interview Questions
+                  </Link>
+                </div>
+              </div>
+              <div aria-current="page">
+                <div className="flex items-center">
+                  <span className="mx-2 text-gray-400">/</span>
+                  <span className="text-blue-900">CSS</span>
+                </div>
+              </div>
+            </div>
+          </nav>
 
           <div className="container mx-auto px-4">
             <h1 className="text-4xl font-extrabold text-center text-blue-700 mb-4">
@@ -335,25 +336,39 @@ const GlossaryTable = () => {
               These are commonly asked CSS interview questions you should know.
               Master them and get confident for your frontend interviews!
             </p>
-            
+
             {/* Content Stats */}
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{termsData.length}+</div>
-                  <div className="text-gray-600 dark:text-gray-300">Questions</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    {termsData.length}+
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Questions
+                  </div>
                 </div>
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2025</div>
-                  <div className="text-gray-600 dark:text-gray-300">Updated</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    2025
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Updated
+                  </div>
                 </div>
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">Beginner to Advanced</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    Beginner to Advanced
+                  </div>
                   <div className="text-gray-600 dark:text-gray-300">Levels</div>
                 </div>
                 <div className="p-4">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">100%</div>
-                  <div className="text-gray-600 dark:text-gray-300">Practical Answers</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                    100%
+                  </div>
+                  <div className="text-gray-600 dark:text-gray-300">
+                    Practical Answers
+                  </div>
                 </div>
               </div>
             </div>
