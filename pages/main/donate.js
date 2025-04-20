@@ -223,7 +223,7 @@ const Donate = () => {
                 
                 <div className="flex justify-center mb-6">
                   <img 
-                    src="/qr-code.png" 
+                    src="/Images/subject/qrcode.jpeg" 
                     alt="Donation QR Code"
                     className="w-48 h-48 border-2 border-gray-200 rounded-lg"
                   />
@@ -242,7 +242,7 @@ const Donate = () => {
                       transition: { delay: 0.7 }
                     }}
                   >
-                    <span className="font-mono">kartik.thedeveloper@upi</span>
+                    <span className="font-mono">9057508560@ptaxis</span>
                     <motion.button
                       className="bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded text-sm"
                       whileHover={{ scale: 1.05 }}
