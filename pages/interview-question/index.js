@@ -254,35 +254,8 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            {/* Category Filter Buttons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="flex flex-wrap justify-center gap-3 mt-10"
-            >
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className="bg-white border border-blue-600 text-blue-700 hover:bg-blue-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
-                  aria-label={`Filter by ${category}`}
-                >
-                  {category}
-                </button>
-              ))}
-              <button
-                onClick={() => setSelectedCategory(null)}
-                className="bg-white border border-gray-500 text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
-                aria-label="Clear filters"
-              >
-                Clear Filter
-              </button>
-            </motion.div>
-
-            {/* FAQ Section for SEO */}
-            <div className="mt-16 max-w-4xl mx-auto px-4">
+  {/* FAQ Section for SEO */}
+  <div className="mt-16 max-w-4xl mx-auto px-4">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Frequently Asked Questions
               </h2>
@@ -309,6 +282,33 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            {/* Category Filter Buttons */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="flex flex-wrap justify-center gap-3 mt-10"
+            >
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className="bg-white border border-blue-600 text-blue-700 hover:bg-blue-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
+                  aria-label={`Filter by ${category}`}
+                >
+                  {category}
+                </button>
+              ))}
+              <button
+                onClick={() => setSelectedCategory(null)}
+                className="bg-white border border-gray-500 text-gray-700 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-xl shadow-md transition duration-300"
+                aria-label="Clear filters"
+              >
+                Clear Filter
+              </button>
+            </motion.div>
+
+          
 
             {/* Subjects Grid */}
             <motion.div
