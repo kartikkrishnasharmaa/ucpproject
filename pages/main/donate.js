@@ -78,8 +78,8 @@ const Donate = () => {
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="Keywords" content="donate, support, coding education, free programming, web development, learn to code" />
-        <link rel="canonical" href="https://unstopcomputer.vercel.app/donate" />
-        <meta property="og:image" content="https://unstopcomputer.vercel.app/Images/logo.png" />
+        <link rel="canonical" href="https://unstopcomputer.tech/donate" />
+        <meta property="og:image" content="https://unstopcomputer.tech/Images/logo.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />
         <meta property="og:image:height" content="150" />

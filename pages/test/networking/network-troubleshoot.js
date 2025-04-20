@@ -293,11 +293,11 @@ const IndexPage = () => {
         />
         <link
           rel="canonical"
-          href="https://unstopcomputer.vercel.app/test/networking/network-troubleshoot"
+          href="https://unstopcomputer.tech/test/networking/network-troubleshoot"
         />
         <meta
           property="og:image"
-          content="https://unstopcomputer.vercel.app/Images/logo.png"
+          content="https://unstopcomputer.tech/Images/logo.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />

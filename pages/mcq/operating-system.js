@@ -223,11 +223,11 @@ const mb = () => {
         />
         <link
           rel="canonical"
-          href="https://unstopcomputer.vercel.app/mcq/operating-system"
+          href="https://unstopcomputer.tech/mcq/operating-system"
         />
         <meta
           property="og:image"
-          content="https://unstopcomputer.vercel.app/Images/logo.png"
+          content="https://unstopcomputer.tech/Images/logo.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />

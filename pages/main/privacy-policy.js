@@ -12,8 +12,8 @@ const privacypolicy = () => {
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
         <meta name="Keywords" content="HTML,Unstop Computer.in,UnstopComputers, Unstop Computer, UnstopComputers.in Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, XML, MySQL, Icons, Node.js, React, Vue, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website" />
-        <link rel="canonical" href="https://unstopcomputer.vercel.app/main/privacy-policy" />
-                <meta property="og:image" content="https://unstopcomputer.vercel.app/Images/logo.png" />
+        <link rel="canonical" href="https://unstopcomputer.tech/main/privacy-policy" />
+                <meta property="og:image" content="https://unstopcomputer.tech/Images/logo.png" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />
         <meta property="og:image:height" content="150" />

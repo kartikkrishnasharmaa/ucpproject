@@ -161,7 +161,7 @@ const Footer = () => {
           >
             <Image alt="logo" src="/Images/logo.png" height={100} width={160} />
           </Link>
-          <p className="mt-2 text-sm text-blue-300">
+          <p className="mt-2 text-sm text-blue-700">
             Learn the essentials of computer programming technologies from the
             Basic to Advanced topics, along with real life practice examples and
             useful references at free of cost.
