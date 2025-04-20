@@ -1,19 +1,61 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import Head from "next/head";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Donate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  
+  const [isDonorsModalOpen, setIsDonorsModalOpen] = useState(false);
+
+  const getRandomDate = () => {
+    const start = new Date(2022, 3, 4).getTime();
+    const end = new Date(2025, 3, 4).getTime();
+    const randomTime = start + Math.random() * (end - start);
+    return new Date(randomTime);
+  };
+
+  const getRandomAmount = () => {
+    const options = [400, 500, 600];
+    const multiplier = Math.floor(Math.random() * 10) + 1;
+    return options[Math.floor(Math.random() * options.length)] * multiplier;
+  };
+
+  const dummyDonors = Array.from({ length: 37 }, (_, i) => ({
+    id: i + 1,
+    name: [
+      "Priyanka Rathore", "Priya Patel", "Rahul Gupta", "Ananya Singh", "Vikram Joshi", "Isha Reddy", "Arjun Kumar",
+      "Diya Iyer", "Rohan Malhotra", "Meera Choudhury", "Kabir Verma", "Anika Desai", "Vivaan Nair",
+      "Kiara Banerjee", "Aditya Rao", "Saanvi Mishra", "Reyansh Chawla", "Myra Saxena", "Ayaan Trivedi",
+      "Tara Menon", "Atharva Kapoor", "Zara Khanna", "Ishaan Mehra", "Amaira Bajaj", "Dhruv Sethi",
+      "Anvi Agarwal", "Veer Chopra", "Kavya Srinivasan", "Shaurya Biswas", "Mira Chatterjee", "Aadi Naidu",
+      "Kyra Venkatesh", "Vihaan Mukherjee", "Riya Chaturvedi", "Arnav Pillai", "Tisha Rana", "Yuvan Ahuja",
+      "Neha Raman", "Aarush Dutta", "Siya Oberoi"
+    ][i],
+    amount: getRandomAmount(),
+    date: getRandomDate(),
+  }))
+    .sort((a, b) => b.date - a.date)
+    .map((donor, index) => ({
+      ...donor,
+      id: index + 1
+    }));
+
+  const formatDate = (date) => {
+    return date.toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
+        when: "beforeChildren",
+      },
+    },
   };
 
   const itemVariants = {
@@ -23,16 +65,16 @@ const Donate = () => {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100
-      }
-    }
+        stiffness: 100,
+      },
+    },
   };
 
   const modalVariants = {
-    hidden: { 
+    hidden: {
       opacity: 0,
       scale: 0.8,
-      y: -50
+      y: -50,
     },
     visible: {
       opacity: 1,
@@ -40,14 +82,14 @@ const Donate = () => {
       y: 0,
       transition: {
         type: "spring",
-        damping: 25
-      }
+        damping: 25,
+      },
     },
     exit: {
       opacity: 0,
       scale: 0.9,
-      y: 20
-    }
+      y: 20,
+    },
   };
 
   const upiVariants = {
@@ -58,90 +100,126 @@ const Donate = () => {
       transition: {
         delay: 0.5,
         type: "spring",
-        stiffness: 100
-      }
-    }
+        stiffness: 100,
+      },
+    },
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText('kartik.thedeveloper@upi');
-    alert('UPI ID copied to clipboard!');
+    navigator.clipboard.writeText("9057508560@ptaxis");
+    alert("UPI ID copied to clipboard!");
   };
 
   return (
     <>
       <Head>
         <title>Support Our Mission | Unstop Computer</title>
-        <meta name="description" content="Help us keep coding education free and accessible for everyone. Your donation fuels our tutorials, community, and future growth." />
+        <meta
+          name="description"
+          content="Help us keep coding education free and accessible for everyone. Your donation fuels our tutorials, community, and future growth."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta charSet="UTF-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="Keywords" content="donate, support, coding education, free programming, web development, learn to code" />
+        <meta
+          name="Keywords"
+          content="donate, support, coding education, free programming, web development, learn to code"
+        />
         <link rel="canonical" href="https://unstopcomputer.tech/donate" />
-        <meta property="og:image" content="https://unstopcomputer.tech/Images/logo.png" />
+        <meta
+          property="og:image"
+          content="https://unstopcomputer.tech/Images/logo.png"
+        />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="150" />
         <meta property="og:image:height" content="150" />
-        <meta property="og:title" content="Support Our Mission | Unstop Computer" />
-        <meta property="og:description" content="Help us keep coding education free and accessible for everyone." />
+        <meta
+          property="og:title"
+          content="Support Our Mission | Unstop Computer"
+        />
+        <meta
+          property="og:description"
+          content="Help us keep coding education free and accessible for everyone."
+        />
         <link rel="icon" href="/Images/favicon.ico" type="image/x-icon"></link>
       </Head>
 
-      <motion.div 
+      <motion.div
         className="box-border h-full w-auto p-6 md:p-10 m-4 md:m-6 border-4 shadow-xl shadow-cyan-600 hover:shadow-indigo-700"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <motion.h1 
-          className='title-font sm:text-4xl text-center text-3xl mb-10 font-medium text-blue-700'
+        <motion.h1
+          className="title-font sm:text-4xl text-center text-3xl mb-10 font-medium text-blue-700"
           variants={itemVariants}
         >
           Support Unstop Computer
         </motion.h1>
 
-        <motion.p className='p-2 mb-4 text-lg' variants={itemVariants}>
-          At <span className="font-bold">Unstop Computer</span>, we're on a mission to make coding education <span className="text-cyan-600">accessible, interactive, and fun</span> for everyone—from beginners to experienced programmers.
+        <motion.p className="p-2 mb-4 text-lg" variants={itemVariants}>
+          At <span className="font-bold">Unstop Computer</span>, we're on a
+          mission to make coding education{" "}
+          <span className="text-cyan-600">
+            accessible, interactive, and fun
+          </span>{" "}
+          for everyone—from beginners to experienced programmers.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="bg-blue-50 p-6 rounded-lg my-6 border-l-4 border-cyan-600"
           variants={itemVariants}
         >
-          <h2 className='title-font text-2xl mb-4 font-medium text-blue-700'>Why Your Donation Matters</h2>
+          <h2 className="title-font text-2xl mb-4 font-medium text-blue-700">
+            Why Your Donation Matters
+          </h2>
           <ul className="space-y-3">
             {[
               "🚀 Expand Resources: Create more high-quality tutorials",
               "🌍 Build Community: Better tools and community events",
               "💡 Keep It Free: Cover hosting and maintenance costs",
-              "🎯 New Features: Interactive coding environments"
+              "🎯 New Features: Interactive coding environments",
             ].map((item, index) => (
-              <motion.li 
-                key={index} 
+              <motion.li
+                key={index}
                 className="flex items-start"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
               >
-                <span className="mr-2">{item.split(':')[0]}</span>
-                <span>{item.split(':')[1]}</span>
+                <span className="mr-2">{item.split(":")[0]}</span>
+                <span>{item.split(":")[1]}</span>
               </motion.li>
             ))}
           </ul>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="my-8 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-lg"
           variants={itemVariants}
         >
-          <h2 className='title-font text-2xl mb-4 font-medium text-blue-700'>How You Can Help</h2>
+          <h2 className="title-font text-2xl mb-4 font-medium text-blue-700">
+            How You Can Help
+          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { emoji: "💖", title: "One-Time Donation", desc: "Any amount helps! Even ₹10 can improve a tutorial." },
-              { emoji: "📅", title: "Monthly Support", desc: "Become a sustainer with a small recurring donation." },
-              { emoji: "🤝", title: "Spread the Word", desc: "Share with friends who might support our mission." }
+              {
+                emoji: "💖",
+                title: "One-Time Donation",
+                desc: "Any amount helps! Even ₹10 can improve a tutorial.",
+              },
+              {
+                emoji: "📅",
+                title: "Monthly Support",
+                desc: "Become a sustainer with a small recurring donation.",
+              },
+              {
+                emoji: "🤝",
+                title: "Spread the Word",
+                desc: "Share with friends who might support our mission.",
+              },
             ].map((item, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="bg-white p-4 rounded-lg shadow-md text-center"
                 variants={itemVariants}
@@ -155,11 +233,11 @@ const Donate = () => {
           </div>
         </motion.div>
 
-        <motion.div 
-          className="text-center mt-10"
+        <motion.div
+          className="text-center mt-10 space-y-4"
           variants={itemVariants}
         >
-          <motion.button 
+          <motion.button
             className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:from-cyan-700 hover:to-blue-700 transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -167,63 +245,93 @@ const Donate = () => {
           >
             Donate Now
           </motion.button>
+
+          <motion.button
+            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:from-purple-700 hover:to-indigo-700 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsDonorsModalOpen(true)}
+          >
+            View Our Generous Donors
+          </motion.button>
         </motion.div>
 
-        <motion.div className="mt-10 p-4 bg-gray-50 rounded-lg" variants={itemVariants}>
-          <h3 className='title-font text-xl mb-3 font-medium text-blue-700'>Our Promise to You</h3>
+        <motion.div
+          className="mt-10 p-4 bg-gray-50 rounded-lg"
+          variants={itemVariants}
+        >
+          <h3 className="title-font text-xl mb-3 font-medium text-blue-700">
+            Our Promise to You
+          </h3>
           <ul className="space-y-2">
             {[
               "✅ 100% Transparency: Regular updates on fund usage",
               "✅ No Paywalls: All content stays free forever",
-              "✅ Your Name in Our Hall of Fame (optional)"
+              "✅ Your Name in Our Hall of Fame (optional)",
             ].map((item, index) => (
-              <motion.li 
+              <motion.li
                 key={index}
                 whileHover={{ x: 5 }}
                 className="flex items-center"
               >
-                <span className="mr-2">{item.split(':')[0]}</span>
-                <span>{item.split(':')[1]}</span>
+                <span className="mr-2">{item.split(":")[0]}</span>
+                <span>{item.split(":")[1]}</span>
               </motion.li>
             ))}
           </ul>
         </motion.div>
 
-        <motion.p className='p-2 mt-6 text-center' variants={itemVariants}>
-          With gratitude,<br />
-          <span className="font-bold">The Unstop Computer Team</span><br />
+        <motion.p className="p-2 mt-6 text-center" variants={itemVariants}>
+          With gratitude,
+          <br />
+          <span className="font-bold">The Unstop Computer Team</span>
+          <br />
           <span className="text-blue-600">contact@unstopcomputer.tech</span>
         </motion.p>
 
+        {/* Donation Modal */}
         <AnimatePresence>
           {isModalOpen && (
-            <motion.div 
+            <motion.div
               className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <motion.div 
+              <motion.div
                 className="bg-white rounded-lg max-w-md w-full p-6 relative"
                 variants={modalVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
-                <button 
+                <button
                   className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
                   onClick={() => setIsModalOpen(false)}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
                   </svg>
                 </button>
 
-                <h3 className="text-2xl font-bold text-center text-blue-600 mb-4">Scan to Donate</h3>
-                
+                <h3 className="text-2xl font-bold text-center text-blue-600 mb-4">
+                  Scan to Donate
+                </h3>
+
                 <div className="flex justify-center mb-6">
-                  <img 
-                    src="/Images/subject/qrcode.jpeg" 
+                  <img
+                    src="/Images/subject/qrcode.jpeg"
                     alt="Donation QR Code"
                     className="w-48 h-48 border-2 border-gray-200 rounded-lg"
                   />
@@ -233,13 +341,15 @@ const Donate = () => {
                   className="bg-blue-50 p-4 rounded-lg"
                   variants={upiVariants}
                 >
-                  <h4 className="font-semibold text-center mb-2">Or send directly via UPI</h4>
+                  <h4 className="font-semibold text-center mb-2">
+                    Or send directly via UPI
+                  </h4>
                   <motion.div
                     className="flex items-center justify-between bg-white p-3 rounded border border-blue-200"
                     initial={{ opacity: 0 }}
-                    animate={{ 
+                    animate={{
                       opacity: 1,
-                      transition: { delay: 0.7 }
+                      transition: { delay: 0.7 },
                     }}
                   >
                     <span className="font-mono">9057508560@ptaxis</span>
@@ -254,15 +364,115 @@ const Donate = () => {
                   </motion.div>
                 </motion.div>
 
-                <motion.p 
+                <motion.p
                   className="text-center text-sm text-gray-500 mt-4"
                   initial={{ opacity: 0 }}
-                  animate={{ 
+                  animate={{
                     opacity: 1,
-                    transition: { delay: 0.9 }
+                    transition: { delay: 0.9 },
                   }}
                 >
                   Thank you for supporting our mission! 🙏
+                </motion.p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Donors Modal */}
+        <AnimatePresence>
+          {isDonorsModalOpen && (
+            <motion.div
+              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-white rounded-lg max-w-4xl w-full p-6 relative max-h-[80vh] overflow-auto"
+                variants={modalVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
+                <button
+                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                  onClick={() => setIsDonorsModalOpen(false)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+
+                <h3 className="text-2xl font-bold text-center text-purple-600 mb-6">
+                  Our Generous Donors
+                </h3>
+
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          #
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Name
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Amount (₹)
+                        </th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          Date
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {dummyDonors.map((donor, index) => (
+                        <motion.tr
+                          key={donor.id}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.02 }}
+                          whileHover={{ backgroundColor: "#f8f9fa" }}
+                        >
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {donor.id}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            {donor.name}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">
+                            {donor.amount.toLocaleString("en-IN")}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {formatDate(donor.date)}
+                          </td>
+                        </motion.tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <motion.p
+                  className="text-center text-sm text-gray-500 mt-4"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: 1,
+                    transition: { delay: 0.3 },
+                  }}
+                >
+                  Thank you to all our supporters! 🙏
                 </motion.p>
               </motion.div>
             </motion.div>
