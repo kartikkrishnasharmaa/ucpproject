@@ -204,7 +204,7 @@ const WordPressInterviewQuestions = () => {
   const pageDescription =
     "Comprehensive collection of WordPress interview questions with detailed answers. Prepare for your WordPress developer job interview with these essential questions on themes, plugins, security, performance, and more.";
   const canonicalUrl =
-    "https://unstopcomputer.tech/interview-question/wordpress-developer";
+    "https://unstopcomputer.tech/interview-question/wordpress";
   const pageImage = "https://unstopcomputer.tech/Images/logo.png";
 
   return (
