@@ -4,48 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Donate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isDonorsModalOpen, setIsDonorsModalOpen] = useState(false);
-
-  const getRandomDate = () => {
-    const start = new Date(2022, 3, 4).getTime();
-    const end = new Date(2025, 3, 4).getTime();
-    const randomTime = start + Math.random() * (end - start);
-    return new Date(randomTime);
-  };
-
-  const getRandomAmount = () => {
-    const options = [400, 500, 600];
-    const multiplier = Math.floor(Math.random() * 10) + 1;
-    return options[Math.floor(Math.random() * options.length)] * multiplier;
-  };
-
-  const dummyDonors = Array.from({ length: 37 }, (_, i) => ({
-    id: i + 1,
-    name: [
-      "Priyanka Rathore", "Priya Patel", "Rahul Gupta", "Ananya Singh", "Vikram Joshi", "Isha Reddy", "Arjun Kumar",
-      "Diya Iyer", "Rohan Malhotra", "Meera Choudhury", "Kabir Verma", "Anika Desai", "Vivaan Nair",
-      "Kiara Banerjee", "Aditya Rao", "Saanvi Mishra", "Reyansh Chawla", "Myra Saxena", "Ayaan Trivedi",
-      "Tara Menon", "Atharva Kapoor", "Zara Khanna", "Ishaan Mehra", "Amaira Bajaj", "Dhruv Sethi",
-      "Anvi Agarwal", "Veer Chopra", "Kavya Srinivasan", "Shaurya Biswas", "Mira Chatterjee", "Aadi Naidu",
-      "Kyra Venkatesh", "Vihaan Mukherjee", "Riya Chaturvedi", "Arnav Pillai", "Tisha Rana", "Yuvan Ahuja",
-      "Neha Raman", "Aarush Dutta", "Siya Oberoi"
-    ][i],
-    amount: getRandomAmount(),
-    date: getRandomDate(),
-  }))
-    .sort((a, b) => b.date - a.date)
-    .map((donor, index) => ({
-      ...donor,
-      id: index + 1
-    }));
-
-  const formatDate = (date) => {
-    return date.toLocaleDateString("en-IN", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -246,14 +204,6 @@ const Donate = () => {
             Donate Now
           </motion.button>
 
-          <motion.button
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:from-purple-700 hover:to-indigo-700 transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsDonorsModalOpen(true)}
-          >
-            View Our Generous Donors
-          </motion.button>
         </motion.div>
 
         <motion.div
@@ -286,7 +236,7 @@ const Donate = () => {
           <br />
           <span className="font-bold">The Unstop Computer Team</span>
           <br />
-          <span className="text-blue-600">contact@unstopcomputer.tech</span>
+          <span className="text-blue-600">kartik.thedeveloper@gmail.com</span>
         </motion.p>
 
         {/* Donation Modal */}
@@ -373,106 +323,6 @@ const Donate = () => {
                   }}
                 >
                   Thank you for supporting our mission! 🙏
-                </motion.p>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Donors Modal */}
-        <AnimatePresence>
-          {isDonorsModalOpen && (
-            <motion.div
-              className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <motion.div
-                className="bg-white rounded-lg max-w-4xl w-full p-6 relative max-h-[80vh] overflow-auto"
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <button
-                  className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                  onClick={() => setIsDonorsModalOpen(false)}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-
-                <h3 className="text-2xl font-bold text-center text-purple-600 mb-6">
-                  Our Generous Donors
-                </h3>
-
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          #
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Name
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Amount (₹)
-                        </th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                          Date
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {dummyDonors.map((donor, index) => (
-                        <motion.tr
-                          key={donor.id}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.02 }}
-                          whileHover={{ backgroundColor: "#f8f9fa" }}
-                        >
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {donor.id}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                            {donor.name}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">
-                            {donor.amount.toLocaleString("en-IN")}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            {formatDate(donor.date)}
-                          </td>
-                        </motion.tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                <motion.p
-                  className="text-center text-sm text-gray-500 mt-4"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: 1,
-                    transition: { delay: 0.3 },
-                  }}
-                >
-                  Thank you to all our supporters! 🙏
                 </motion.p>
               </motion.div>
             </motion.div>

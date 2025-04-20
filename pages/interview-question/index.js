@@ -246,7 +246,7 @@ const Home = () => {
             </motion.div>
 
             {/* Popular Categories Section */}
-            <div className="mt-12 max-w-7xl mx-auto px-4">
+            <div className="mt-12 px-2">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">
                 Popular Interview Question Categories
               </h2>
@@ -258,7 +258,7 @@ const Home = () => {
                     className="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
                   >
                     <h3 className="font-medium text-blue-600 hover:text-blue-800">
-                      {subject.name} Interview Q&A
+                      {subject.name}
                     </h3>
                   </Link>
                 ))}

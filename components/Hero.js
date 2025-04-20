@@ -1,31 +1,31 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   // Coding icons data
   const codingIcons = [
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '</>', name: 'html' },
-    { icon: '{}', name: 'javascript' },
-    { icon: '() =>', name: 'function' },
-    { icon: 'const', name: 'variable' },
-    { icon: 'div', name: 'div' },
-    { icon: 'class', name: 'class' },
-    { icon: 'import', name: 'import' },
-    { icon: 'export', name: 'export' },
-    { icon: 'if', name: 'if' },
-    { icon: 'for', name: 'loop' },
-    { icon: 'try', name: 'try' },
-    { icon: 'async', name: 'async' },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "</>", name: "html" },
+    { icon: "{}", name: "javascript" },
+    { icon: "() =>", name: "function" },
+    { icon: "const", name: "variable" },
+    { icon: "div", name: "div" },
+    { icon: "class", name: "class" },
+    { icon: "import", name: "import" },
+    { icon: "export", name: "export" },
+    { icon: "if", name: "if" },
+    { icon: "for", name: "loop" },
+    { icon: "try", name: "try" },
+    { icon: "async", name: "async" },
   ];
 
   // Animation variants
@@ -35,9 +35,9 @@ const Hero = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        delayChildren: 0.3
-      }
-    }
+        delayChildren: 0.3,
+      },
+    },
   };
 
   const itemVariants = {
@@ -47,9 +47,9 @@ const Hero = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const buttonVariants = {
@@ -59,12 +59,12 @@ const Hero = () => {
       transition: {
         duration: 0.3,
         yoyo: Infinity,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     },
     tap: {
-      scale: 0.95
-    }
+      scale: 0.95,
+    },
   };
 
   const imageVariants = {
@@ -74,9 +74,9 @@ const Hero = () => {
       x: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   // Random floating animation for background icons
@@ -84,7 +84,7 @@ const Hero = () => {
     initial: {
       y: 0,
       x: 0,
-      opacity: 0
+      opacity: 0,
     },
     animate: (i) => ({
       y: [0, -20, 0, 20, 0],
@@ -94,9 +94,9 @@ const Hero = () => {
         duration: 10 + Math.random() * 20,
         repeat: Infinity,
         delay: i * 2,
-        ease: "linear"
-      }
-    })
+        ease: "linear",
+      },
+    }),
   };
 
   return (
@@ -122,88 +122,96 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-5 py-24 flex md:flex-row flex-col items-center relative z-10">
-        <motion.div 
+        <motion.div
           className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
-          <motion.h1 
-            className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+          <motion.h1
+            className="title-font sm:text-5xl text-4xl mb-6 font-bold text-gray-800 font-sans"
             variants={itemVariants}
           >
-            Learn Anytime &<br />Learn from Anywhere
+            Learn Anytime &<br className="hidden md:inline" />{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Learn Anywhere
+            </span>
           </motion.h1>
-          
-          <motion.p 
-            className="mb-8 flex-wrap relative z-10"
+
+          <motion.p
+            className="mb-8 flex-wrap relative z-10 text-lg text-gray-600 leading-relaxed font-sans max-w-lg"
             variants={itemVariants}
           >
-            Learn the essentials of computer programming technologies from the Basic to Advanced topics, along with real life practice examples and useful references at free of cost.
+            Master computer programming technologies from{" "}
+            <span className="font-semibold text-gray-700">
+              Basic to Advanced
+            </span>
+            , with real-world practice examples and useful references -{" "}
+            <span className="italic text-indigo-600">completely free</span>.
           </motion.p>
-          
+
           <motion.div
-            className="flex flex-wrap justify-center md:justify-start relative z-10"
+            className="flex flex-wrap justify-center md:justify-start relative z-10 gap-3"
             variants={containerVariants}
           >
             <motion.div
-              className="m-2"
               variants={itemVariants}
-              whileHover="hover"
-              whileTap="tap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link href="/mcq">
                 <motion.button
-                  className="whitespace-nowrap rounded-xl py-2 px-4 text-white bg-gradient-to-r from-blue-600 to-indigo-700 font-bold shadow-lg"
-                  variants={buttonVariants}
+                  className="whitespace-nowrap rounded-xl py-3 px-6 text-white bg-gradient-to-r from-blue-600 to-indigo-700 font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-sans"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   MCQ
                 </motion.button>
               </Link>
             </motion.div>
-            
+
             <motion.div
-              className="m-2"
               variants={itemVariants}
-              whileHover="hover"
-              whileTap="tap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link href="/interview-question">
                 <motion.button
-                  className="whitespace-nowrap rounded-xl py-2 px-4 text-white bg-gradient-to-r from-purple-600 to-pink-600 font-bold shadow-lg"
-                  variants={buttonVariants}
+                  className="whitespace-nowrap rounded-xl py-3 px-6 text-white bg-gradient-to-r from-purple-600 to-fuchsia-600 font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-sans"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Interview Prep
                 </motion.button>
               </Link>
             </motion.div>
-            
+
             <motion.div
-              className="m-2"
               variants={itemVariants}
-              whileHover="hover"
-              whileTap="tap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link href="/test">
                 <motion.button
-                  className="whitespace-nowrap rounded-xl py-2 px-4 text-white bg-gradient-to-r from-green-600 to-teal-600 font-bold shadow-lg"
-                  variants={buttonVariants}
+                  className="whitespace-nowrap rounded-xl py-3 px-6 text-white bg-gradient-to-r from-emerald-600 to-teal-600 font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-sans"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Test
                 </motion.button>
               </Link>
             </motion.div>
-            
+
             <motion.div
-              className="m-2"
               variants={itemVariants}
-              whileHover="hover"
-              whileTap="tap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Link href="/cheatsheet">
                 <motion.button
-                  className="whitespace-nowrap rounded-xl py-2 px-4 text-white bg-gradient-to-r from-amber-500 to-orange-600 font-bold shadow-lg"
-                  variants={buttonVariants}
+                  className="whitespace-nowrap rounded-xl py-3 px-6 text-white bg-gradient-to-r from-amber-500 to-orange-500 font-bold shadow-lg hover:shadow-xl transition-all duration-300 font-sans"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Cheatsheet
                 </motion.button>
@@ -211,19 +219,20 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-        
-        <motion.div 
+
+        {/* Image section */}
+        <motion.div
           className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative z-10"
           initial="hidden"
           animate="visible"
           variants={imageVariants}
         >
-          <Image 
-            className="object-cover object-center rounded" 
-            alt="hero-banner" 
-            width={550} 
-            height={500} 
-            src="/Images/hero.png" 
+          <Image
+            className="object-cover object-center rounded"
+            alt="hero-banner"
+            width={550}
+            height={500}
+            src="/Images/hero.png"
           />
         </motion.div>
       </div>

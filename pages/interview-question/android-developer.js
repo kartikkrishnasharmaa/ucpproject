@@ -295,7 +295,7 @@ const GlossaryTable = () => {
 
       <QueLayout>
         <section id="content-wrapper" className="">
-          <div className="container mx-auto px-4 py-8">
+          <div className="container py-8">
             {/* Breadcrumb Navigation */}
             <nav className="flex mb-6" aria-label="Breadcrumb">
               <div className="inline-flex items-center space-x-1 md:space-x-3">
@@ -325,11 +325,11 @@ const GlossaryTable = () => {
             </nav>
 
             {/* Page Header */}
-            <div className="text-center mb-12">
+            <div className="mb-12">
               <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-4">
                 Android Developer Interview Questions and Answers
               </h1>
-              <p className="text-lg text-blue-700 max-w-3xl mx-auto">
+              <p className="text-lg text-blue-700">
                 Comprehensive collection of frequently asked Android interview
                 questions with detailed answers. Prepare for your technical
                 interview with these essential questions on Activities,
@@ -338,8 +338,8 @@ const GlossaryTable = () => {
             </div>
 
             {/* Content Stats */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-2 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 text-center">
                 <div className="p-4 border-r border-gray-200 dark:border-gray-600">
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                     {termsData.length}+
@@ -356,7 +356,7 @@ const GlossaryTable = () => {
                     Updated
                   </div>
                 </div>
-                <div className="p-4 border-r border-gray-200 dark:border-gray-600">
+                <div className="p-2 border-r border-gray-200 dark:border-gray-600">
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                     Beginner to Advanced
                   </div>
@@ -374,7 +374,7 @@ const GlossaryTable = () => {
             </div>
 
             {/* Table of Contents */}
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 mb-8">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-2 mb-8">
               <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Table of Contents
               </h2>
@@ -399,9 +399,9 @@ const GlossaryTable = () => {
                   id={`q${index + 1}`}
                   className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden"
                 >
-                  <div className="p-6">
+                  <div className="p-4">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+                      <div className="flex-shrink-0 bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-4 mt-1">
                         {index + 1}
                       </div>
                       <div>
