@@ -60,8 +60,8 @@ export default function BlogPost({ content, meta, featuredPosts, categories }) {
           <img
             src={meta.coverImage}
             alt={meta.title}
-            className="w-full h-72 object-cover rounded-xl mb-6 shadow-lg"
-          />
+            className="w-full h-auto object-contain rounded-xl mb-6 shadow-lg"
+            />
           <motion.h1
             className="text-4xl font-semibold mb-4 text-gray-900"
             initial={{ y: -20 }}
