@@ -7,10 +7,10 @@ export default function BlogCard({ post }) {
     <motion.div
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
-      className="bg-white shadow-md rounded-xl overflow-hidden mb-6 transition-all duration-300"
+      className="bg-white ml-4 shadow-md rounded-xl overflow-hidden mb-6 transition-all duration-300"
     >
       <Link href={`/blog/${post.slug}`}>
-        <img src={post.coverImage} alt={post.title} className="w-full h-52 object-cover cursor-pointer" />
+        <img src={post.coverImage} alt={post.title} className="w-full h-56 object-cover cursor-pointer" />
       </Link>
       <div className="p-4">
         <Link href={`/blog/${post.slug}`}>
