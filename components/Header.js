@@ -159,7 +159,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <header className="sticky top-0 z-50 bg-black backdrop-blur-md shadow-sm">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo with animation */}
@@ -200,8 +200,8 @@ const Header = () => {
                     href={navItem.path}
                     className={`relative px-2 py-1.5 font-medium transition-colors ${
                       isActive
-                        ? "text-blue-900 font-bold "
-                        : "text-gray-700 hover:text-blue-600"
+                        ? "text-white font-bold "
+                        : "text-white hover:text-white"
                     }`}
                   >
                     {navItem.name}
@@ -241,7 +241,7 @@ const Header = () => {
               transition={{ duration: 0.3 }}
             >
               <svg
-                className="w-6 h-6 text-gray-700"
+                className="w-6 h-6 text-white"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -291,7 +291,7 @@ const Header = () => {
                         className={`block px-4 py-3 rounded-lg transition-colors ${
                           isActive
                             ? "bg-blue-50 text-blue-600 font-semibold"
-                            : "text-gray-700 hover:bg-gray-100"
+                            : "text-white hover:bg-black-700"
                         }`}
                         onClick={() => setIsMenuOpen(false)}
                       >

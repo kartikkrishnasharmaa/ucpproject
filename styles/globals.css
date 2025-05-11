@@ -13,6 +13,34 @@
   margin: 0;
   padding: 0;
 }
+/* styles/glow.css */
+.dynamic-bg {
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(222, 201, 10, 0.15),
+    transparent 80%
+  );
+  transition: background 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+/* Add this in your globals.css or styles.css */
+.double-border {
+  position: relative;
+}
+
+.double-border::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  right: -9px;
+  bottom: -9px;
+  border: 2px double #4f46e5; /* purple-600 */
+  border-radius: 0.75rem; /* same as rounded-lg */
+  z-index: -1;
+}
+
 
 
 .horizontal_wrapper{

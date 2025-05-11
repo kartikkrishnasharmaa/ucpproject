@@ -48,19 +48,13 @@ const cardVariant = {
 
 const Mcq = () => {
   return (
-    <section className="text-gray-700 body-font py-20 relative z-10 bg-gradient-to-b from-white to-blue-50">
+    <section className="text-white bg-black body-font py-20 z-10">
       <div className="container px-5 mx-auto">
         {/* Title and button */}
         <div className="flex flex-col items-center justify-center text-center mb-10">
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text mb-4">
+          <h2 className="p-4 text-gray-900 title-font text-4xl mb-12 font-extrabold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600">
             Multiple Choice Questions
           </h2>
-          <Link
-            href="/mcq"
-            className="inline-block px-6 py-2 border border-blue-500 text-blue-700 font-semibold rounded-lg hover:bg-blue-50 transition"
-          >
-            View All
-          </Link>
         </div>
 
         {/* Grid of cards */}
@@ -74,7 +68,7 @@ const Mcq = () => {
                 animate="visible"
                 whileHover="hover"
                 variants={cardVariant}
-                className="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center min-h-[300px]"
+                className="bg-white rounded-2xl p-6 shadow-md flex flex-col items-center"
               >
                 <Link
                   href={topic.link}

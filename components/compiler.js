@@ -61,17 +61,18 @@ const pulseAnimation = {
   }
 };
 
+
 const Compiler = () => {
   return (
     <>
       {/* Computer Dictionary Section */}
       <motion.section 
-        className="bg-gradient-to-r from-blue-600 to-blue-800 px-8 body-font"
+        className="bg-black text-white px-8 body-font"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
-        <div className="container mx-auto px-5 flex md:flex-row flex-col items-center py-12">
+        <div className="container mx-auto px-5 flex md:flex-row flex-col items-center py-12 shadow-2xl hover:shadow-indigo-700 transition-shadow duration-300">
           <div className="lg:flex-grow ml-8 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <motion.h1 
               className="title-font sm:text-5xl text-4xl mb-6 font-bold text-white"
@@ -88,7 +89,7 @@ const Compiler = () => {
             </motion.p>
             
             <motion.div 
-              className="flex space-x-4"
+              className="flex space-x-4 shadow-2xl hover:shadow-indigo-700 transition-shadow duration-300"
               variants={itemVariants}
               whileHover="hover"
             >
@@ -113,7 +114,7 @@ const Compiler = () => {
               className="relative"
             >
               <Image
-                className="object-center rounded-lg shadow-2xl"
+                className="object-center rounded-lg shadow-2xl hover:shadow-indigo-700 transition-shadow duration-300"
                 alt="Computer Dictionary Illustration"
                 width={500}
                 height={400}
@@ -135,7 +136,7 @@ const Compiler = () => {
 
       {/* Interview Prep Banner */}
       <motion.div 
-        className="px-8 mt-12 mb-12"
+        className="px-8 bg-black"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
@@ -169,7 +170,7 @@ const Compiler = () => {
 
       {/* Online Test Section */}
       <motion.section 
-        className="px-8 body-font bg-gradient-to-br from-blue-50 to-white"
+        className="px-8 bg-black body-font text-white"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
@@ -193,16 +194,16 @@ const Compiler = () => {
             </motion.div>
           </motion.div>
           
-          <div className="lg:flex-grow ml-8 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <div className="lg:flex-grow ml-8 md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left p-10 items-center text-center shadow-2xl hover:shadow-indigo-700 transition-shadow duration-300">
             <motion.h1 
-              className="title-font sm:text-4xl text-3xl mb-6 font-bold text-blue-800"
+              className="title-font sm:text-4xl text-3xl mb-6 font-bold text-white"
               variants={itemVariants}
             >
               Test Your <span className="text-blue-600">Knowledge</span>
             </motion.h1>
             
             <motion.p 
-              className="text-blue-700 mb-8 leading-relaxed text-lg"
+              className="text-white mb-8 leading-relaxed text-lg"
               variants={itemVariants}
             >
               Challenge yourself with our interactive quizzes covering algorithms, data structures, programming languages, and cutting-edge technologies. Perfect for interview prep or skill assessment.
