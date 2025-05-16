@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Donate = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -280,10 +281,12 @@ const Donate = () => {
                 </h3>
 
                 <div className="flex justify-center mb-6">
-                  <img
+                  <Image
                     src="/Images/subject/qrcode.jpeg"
                     alt="Donation QR Code"
                     className="w-48 h-48 border-2 border-gray-200 rounded-lg"
+                    width={192}
+                    height={192}
                   />
                 </div>
 

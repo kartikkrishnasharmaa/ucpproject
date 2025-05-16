@@ -19,6 +19,7 @@ import {
   WhatsappIcon,
   TelegramIcon,
 } from 'react-share';
+import Image from 'next/image';
 import { ClipboardIcon } from '@heroicons/react/24/outline';
 
 export default function BlogPost({ content, meta, featuredPosts, categories }) {
@@ -57,11 +58,13 @@ export default function BlogPost({ content, meta, featuredPosts, categories }) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <img
+          <Image
             src={meta.coverImage}
             alt={meta.title}
             className="w-full h-auto object-contain rounded-xl mb-6 shadow-lg"
-            />
+            width={384}
+            height={224}
+          />
           <motion.h1
             className="text-4xl font-semibold mb-4 text-gray-900"
             initial={{ y: -20 }}

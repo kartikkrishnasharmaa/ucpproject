@@ -5,7 +5,7 @@ date: "2025-04-23"
 category: "Digital Marketing"
 isFeatured: true    
 subcategory: "Industry Trends"
-coverImage: "/Images/blog/dm.png"
+coverImage: "/Images/blog/dm.webp"
 seoTitle: "Digital Marketing Careers in 2025: Top Roles, Salaries & Future Trends"
 seoDescription: "Comprehensive guide to high-growth digital marketing careers in 2025, including required technical skills, salary ranges, and emerging specializations."
 keywords: "digital marketing careers 2025, marketing tech jobs, AI marketing specialist, metaverse marketing, data storytelling, conversational marketing"

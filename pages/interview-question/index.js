@@ -3,6 +3,7 @@ import QueLayout from "../../components/QueLayout";
 import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -339,8 +340,10 @@ const Home = () => {
                       <div
                         className={`bg-gradient-to-br ${subject.gradient} w-full h-[150px] relative rounded-lg overflow-hidden flex items-center justify-center`}
                       >
-                        <img
+                        <Image
                           src={subject.image}
+                          width={150}
+                          height={150}
                           alt={`${subject.name} interview questions`}
                           className="max-w-[80%] max-h-[80%] object-contain"
                           style={{

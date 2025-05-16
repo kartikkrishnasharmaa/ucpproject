@@ -1,5 +1,5 @@
 // pages/blog/category/[category].js
-
+import Image from 'next/image';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -40,9 +40,11 @@ export default function CategoryPage({ posts, category, currentPage, totalPages 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <div key={post.slug} className="bg-white p-5 rounded-xl shadow-md">
-              <img
+              <Image
                 src={post.coverImage}
                 alt={post.title}
+                width={384}
+                height={224}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>

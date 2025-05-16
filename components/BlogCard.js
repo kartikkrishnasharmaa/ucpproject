@@ -1,5 +1,6 @@
 // components/BlogCard.js
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function BlogCard({ post }) {
@@ -10,7 +11,7 @@ export default function BlogCard({ post }) {
       className="bg-white ml-4 shadow-md rounded-xl overflow-hidden mb-6 transition-all duration-300"
     >
       <Link href={`/blog/${post.slug}`}>
-        <img src={post.coverImage} alt={post.title} className="w-full h-56 object-cover cursor-pointer" />
+        <Image height={224} width={384} src={post.coverImage} alt={post.title} className="w-full h-56 object-cover cursor-pointer" />
       </Link>
       <div className="p-4">
         <Link href={`/blog/${post.slug}`}>

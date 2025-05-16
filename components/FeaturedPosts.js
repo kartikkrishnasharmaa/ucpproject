@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 function getRandomPosts(posts, count) {
   const shuffled = [...posts].sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
@@ -13,7 +15,9 @@ export default function FeaturedPosts({ posts }) {
           <div key={post.slug} className="flex items-center space-x-4">
             {/* Featured Post Thumbnail */}
             {post.coverImage && (
-              <img
+              <Image
+                width={64}
+                height={64}
                 src={post.coverImage}
                 alt={post.title}
                 className="w-16 h-16 object-cover rounded-md"
