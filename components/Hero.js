@@ -151,7 +151,7 @@ const Hero = () => {
               alt="hero-banner"
               width={550}
               height={500}
-              src="/Images/hero.png"
+              src="/Images/hero.webp"
             />
           </div>
         </motion.div>

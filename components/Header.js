@@ -170,10 +170,10 @@ const Header = () => {
           >
             <Link href="/" className="flex items-center">
               <Image
-                src="/Images/logo.png"
+                src="/Images/logo.webp"
                 width={140}
                 height={40}
-                alt="Logo"
+                alt="website Logo"
                 className="hover:scale-105 transition-transform duration-300"
               />
             </Link>
