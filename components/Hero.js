@@ -114,8 +114,8 @@ const Hero = () => {
                 colors: "from-emerald-600 to-teal-600",
               },
               {
-                href: "/cheatsheet",
-                text: "Cheatsheet",
+                href: "/blog",
+                text: "Articles",
                 colors: "from-amber-500 to-orange-500",
               },
             ].map(({ href, text, colors }, index) => (
