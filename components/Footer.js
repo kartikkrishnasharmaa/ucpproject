@@ -54,7 +54,7 @@ const Footer = () => {
 
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10 relative z-10">
           <Link href="/" className="flex title-font font-medium items-center md:justify-start justify-center text-blue-100">
-            <Image alt="logo" src="/Images/logo.png" height={100} width={160} />
+            <Image alt="logo" src="/Images/logo.webp" height={100} width={160} />
           </Link>
           <p className="mt-2 text-md text-white">
             Learn the essentials of computer programming technologies from Basic to Advanced, with real life examples and references — all free!
