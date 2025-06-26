@@ -20,6 +20,7 @@ const Header = () => {
     { name: "MCQ", path: "/mcq" },
     { name: "Test", path: "/test" },
     { name: "Interview Preparation", path: "/interview-question" },
+    { name: "Online Compiler", path: "/compiler/index.html" }
   ];
 
   const scrollItemsData = [

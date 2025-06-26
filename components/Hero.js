@@ -118,6 +118,11 @@ const Hero = () => {
                 text: "Articles",
                 colors: "from-amber-500 to-orange-500",
               },
+              {
+                href: "/compiler/index.html",
+                text: "Online Compiler",
+                colors: "from-blue-600 to-indigo-700",
+              },
             ].map(({ href, text, colors }, index) => (
               <motion.div
                 key={index}
