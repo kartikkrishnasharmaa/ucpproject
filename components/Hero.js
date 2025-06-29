@@ -82,7 +82,7 @@ const Hero = () => {
               </span>
             </motion.h1>
           </motion.div>
-
+{/* kya hua */}
           <motion.p
             className="mb-8 text-lg text-white leading-relaxed font-sans max-w-lg"
             variants={itemVariants}
