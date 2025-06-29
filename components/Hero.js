@@ -76,7 +76,7 @@ const Hero = () => {
             <motion.h1
               className="title-font sm:text-5xl text-4xl mb-6 font-bold text-white font-sans transform transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110 group-hover:rotate-1"
             >
-              Learnnn Anytime &<br className="hidden md:inline" />{" "}
+              Learn Anytime &<br className="hidden md:inline" />{" "}
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Learn Anywhere
               </span>
