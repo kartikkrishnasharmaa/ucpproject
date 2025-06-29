@@ -24,15 +24,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-   <div class="toolbar">
-   <a href="https://unstopcomputer.tech/"> <button>HOME</button></a>
-  <button onclick="runCode()">▶ Run</button>
-  <button onclick="toggleLayout()">🔁 Toggle Layout</button>
-  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
-  <button onclick="captureScreenshot()">📸 Screenshot</button>
-  <button onclick="openInNewTab()">🌐 Open in New Tab</button>
-</div>
-
+    <div class="toolbar">
+      <a href="https://unstopcomputer.tech/">
+        <button>HOME</button>
+      </a>
+      <button onclick="runCode()">▶ Run</button>
+      <button onclick="toggleLayout()">🔁 Toggle Layout</button>
+      <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+      <button onclick="captureScreenshot()">📸 Screenshot</button>
+      <button onclick="openInNewTab()">🌐 Open in New Tab</button>
+    </div>
 
     <div id="container" class="vertical">
       <div class="split" id="editor-pane">
@@ -43,19 +44,30 @@
         </div>
 
         <div class="code-area">
+          <!-- HTML Tab -->
           <div id="tab-html" class="tab-content">
-            <textarea id="htmlCode">
+            <label for="htmlCode">HTML Code Editor</label>
+            <textarea
+              id="htmlCode"
+              title="HTML Code Editor"
+              placeholder="Write your HTML code here"
+            >
 <div class="card">
   <h1>Welcome to My Page</h1>
   <p>This is a sample description inside a styled card.</p>
   <button onclick="showAlert()">Click Me</button>
 </div>
-  </textarea
-            >
+            </textarea>
           </div>
 
+          <!-- CSS Tab -->
           <div id="tab-css" class="tab-content hidden">
-            <textarea id="cssCode">
+            <label for="cssCode">CSS Code Editor</label>
+            <textarea
+              id="cssCode"
+              title="CSS Code Editor"
+              placeholder="Write your CSS code here"
+            >
 body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
@@ -81,18 +93,22 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-    </textarea
-            >
+            </textarea>
           </div>
 
+          <!-- JS Tab -->
           <div id="tab-js" class="tab-content hidden">
-            <textarea id="jsCode">
+            <label for="jsCode">JavaScript Code Editor</label>
+            <textarea
+              id="jsCode"
+              title="JavaScript Code Editor"
+              placeholder="Write your JavaScript code here"
+            >
 function showAlert() {
   alert("Button clicked!");
   console.log("Button was clicked!");
 }
-    </textarea
-            >
+            </textarea>
           </div>
         </div>
       </div>
@@ -106,7 +122,6 @@ function showAlert() {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/hint/show-hint.min.js"></script>
